@@ -211,7 +211,8 @@ body {
 #month,
 #day {
   font-size: var(--fg-date);
-  font-weight: bold;
+  font-weight: 700;
+  letter-spacing: -0.04em;
   color: var(--fg);
 }
 
@@ -278,13 +279,16 @@ body {
 
 .weatherValue p {
   font-size: var(--fg-secondary);
-  font-weight: bolder;
+  font-weight: 600;
+  letter-spacing: -0.015em;
   margin-left: 15px;
   color: var(--fg);
 }
 
 .weatherDescription p {
   font-size: var(--fg-secondary);
+  font-weight: 300;
+  letter-spacing: -0.015em;
   margin-left: 15px;
   color: var(--fg);
 }
