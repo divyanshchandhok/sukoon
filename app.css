@@ -377,13 +377,13 @@ body {
 /* Typewriter Caret Styles */
 .typewriter-caret {
   display: inline-block;
-  width: 2px;
-  height: 1.1em;
+  width: 1.5px; /* Narrower */
+  height: 0.85em; /* Shorter to not look too large compared to text */
   background-color: var(--fg);
-  opacity: 0.45; /* Low-contrast, subtle look */
+  opacity: 0.35; /* Softer base opacity */
   margin-left: 3px;
-  vertical-align: -0.12em; /* Centered relative to baseline */
-  animation: blink 0.75s infinite alternate;
+  vertical-align: -0.05em; /* Better vertical alignment for shorter caret */
+  animation: blink 0.8s ease-in-out infinite alternate; /* Smooth breathing fade in/out */
 }
 
 .typewriter-caret.done {
@@ -392,7 +392,11 @@ body {
 }
 
 @keyframes blink {
-  0%, 40% { opacity: 1; }
-  60%, 100% { opacity: 0; }
+  from {
+    opacity: 0.08; /* Gentle fade-out limit */
+  }
+  to {
+    opacity: 0.5; /* Gentle fade-in limit */
+  }
 }
 
