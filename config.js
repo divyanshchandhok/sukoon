@@ -10,7 +10,7 @@ const CONFIG = {
 	// └─┘┴ ┴└─┘┴└─┘└─┘
 
 	// General
-	name: 'YourName',
+	name: 'Zedtrooper',
 	imageBackground: false,
 	openInNewTab: true,
 	twelveHourFormat: true,
@@ -22,10 +22,10 @@ const CONFIG = {
 	greetingNight: 'Good night, sleep well.',
 
 	// Layout
-	layout: 'bento', // 'bento', 'lists', 'buttons'
+	layout: 'lists', // 'bento', 'lists', 'buttons'
 
 	// Weather
-	weatherKey: '', // Get your API key from https://openweathermap.org/
+	weatherKey: 'd1ab6949b535cc78d0e47bdd70c5ec47', // Get your API key from https://openweathermap.org/
 	weatherIcons: 'OneDark', // 'OneDark', 'Nord', 'Dark', 'White'
 	weatherUnit: 'C', // 'C' or 'F'
 	language: 'en', // More languages at https://openweathermap.org/current#multi
@@ -53,7 +53,7 @@ const CONFIG = {
 			id: '1',
 			name: 'GitHub',
 			icon: 'github-logo',
-			link: 'https://github.com/',
+			link: 'https://github.com/Musa-dabwe/',
 		},
 		{
 			id: '2',
@@ -65,7 +65,7 @@ const CONFIG = {
 			id: '3',
 			name: 'YouTube',
 			icon: 'youtube-logo',
-			link: 'https://youtube.com/',
+			link: 'https://youtube.com/musathepoet',
 		},
 		{
 			id: '4',
