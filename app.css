@@ -9,6 +9,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap'); /* Font Import */
 
 :root {
+  color-scheme: light;
   /* Font Size */
   --fg-primary: 12vh; /* Time and Greetings */
   --fg-secondary: 3vh; /* Greetings and Weather widger */
@@ -34,6 +35,7 @@
 }
 
 .darktheme {
+  color-scheme: dark;
   /* Dark Colors  */
   --accent: #8fa89b; /* Premium desaturated pale sage green */
   --background: #19171a; /* Background color */
@@ -73,11 +75,12 @@ body {
   justify-content: center;
 }
 
-.notransition {
-  -webkit-transition: none;
-  -moz-transition: none;
-  -o-transition: none;
-  transition: none;
+.notransition,
+.notransition * {
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
 }
 
 .withImageBackground {

@@ -5,10 +5,11 @@
 		<title>Sukoon</title>
 		<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg" />
 		<link rel="stylesheet" href="app.css" />
-		<link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 		<script src="config.js"></script>
 		<script>
 			(function() {
+				document.documentElement.classList.add('notransition');
+
 				const getDefaultTheme = () => {
 					let isDark = false;
 					if (window.CONFIG && CONFIG.autoChangeTheme) {
@@ -50,6 +51,7 @@
 				}
 			})();
 		</script>
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 	</head>
 
 	<!--

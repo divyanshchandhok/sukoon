@@ -66,9 +66,7 @@ const initTheme = () => {
 	localStorage.setItem('lastDefaultTheme', currentDefault);
 	
 	if (finalTheme === 'dark') {
-		document.documentElement.classList.add('notransition');
 		enableDark();
-		document.documentElement.classList.remove('notransition');
 	} else {
 		disableDark();
 	}
@@ -99,3 +97,10 @@ themeToggle.addEventListener('click', () => {
 if (CONFIG.imageBackground) {
 	document.body.classList.add('withImageBackground');
 }
+
+// Remove notransition after a tiny timeout to ensure the initial layout paint is finished without transitions
+window.addEventListener('DOMContentLoaded', () => {
+	setTimeout(() => {
+		document.documentElement.classList.remove('notransition');
+	}, 50);
+});
