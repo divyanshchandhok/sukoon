@@ -9,18 +9,12 @@
 		<script src="config.js"></script>
 		<script>
 			(function() {
-				const darkTheme = localStorage.getItem('darkTheme');
-				let isDark = false;
-				
-				if (darkTheme === 'enabled') {
-					isDark = true;
-				} else if (darkTheme === 'disabled') {
-					isDark = false;
-				} else {
+				const getDefaultTheme = () => {
+					let isDark = false;
 					if (window.CONFIG && CONFIG.autoChangeTheme) {
 						if (CONFIG.changeThemeByOS) {
 							isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-						} else if (CONFIG.changeThemeByHour) {
+						} else if (CONFIG.changeThemeByHour && !CONFIG.changeThemeByOS) {
 							const date = new Date();
 							const hours = date.getHours() < 10 ? '0' + date.getHours().toString() : date.getHours().toString();
 							const minutes = date.getMinutes() < 10 ? '0' + date.getMinutes().toString() : date.getMinutes().toString();
@@ -32,9 +26,24 @@
 							}
 						}
 					}
+					return isDark ? 'dark' : 'light';
+				};
+
+				const currentDefault = getDefaultTheme();
+				const lastDefault = localStorage.getItem('lastDefaultTheme');
+				const userOverride = localStorage.getItem('userOverrideTheme');
+				
+				let finalTheme = currentDefault;
+				
+				if (lastDefault === currentDefault) {
+					if (userOverride === 'dark') {
+						finalTheme = 'dark';
+					} else if (userOverride === 'light') {
+						finalTheme = 'light';
+					}
 				}
 				
-				if (isDark) {
+				if (finalTheme === 'dark') {
 					document.documentElement.classList.add('darktheme');
 				} else {
 					document.documentElement.classList.remove('darktheme');
